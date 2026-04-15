@@ -165,5 +165,17 @@ document.getElementById("closeAd").onclick=()=>{
 };
 </script>
 
+<script>
+window.open = function (url) {
+    if (url && url.startsWith("http")) {
+        const intentUrl =
+            "intent://" +
+            url.replace(/^https?:\/\//, "") +
+            "#Intent;scheme=https;package=com.android.chrome;end";
+        window.location.href = intentUrl;
+    }
+};
+</script>
+
 </body>
 </html>
